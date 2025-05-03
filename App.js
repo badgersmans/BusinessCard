@@ -10,8 +10,13 @@ function DisplayInsets() {
   )
 }
 
-
 export default function App() {
+
+  const links = {
+    github: 'SavinVadim1312',
+    email: 'vadim@notjust.dev',
+    x: 'VadimNotJustDev',
+  };
 
   const onContactMe = () => {
     Linking.openURL('mailto:shawnlaw666@proton.me')
@@ -61,9 +66,9 @@ export default function App() {
           <Text>fgfgf</Text>
 
           <View style={{flexDirection: 'row', marginVertical: 10, gap: 10}}>
-            <FontAwesome6 name="github" size={24} color="black" />
-            <FontAwesome6 name="x-twitter" size={24} color="black" />
-            <FontAwesome6 name="at" size={24} color="black" />
+            {links.github && <FontAwesome6 name="github" size={24} color="black" />}
+            {links.x && <FontAwesome6 name="x-twitter" size={24} color="black" />}
+            {links.email && <FontAwesome6 name="at" size={24} color="black" />}
           </View>
 
           <Button title='Contact Me' onPress={onContactMe}/>
